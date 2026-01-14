@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AstroToMedia</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: silver;
+    background: black;
+    overflow-x: hidden;
+}
+
+/* Background Image */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0 ;
+    bottom: 0;
+    width: 95vw;
+    height: 95vh;
+    background: url("Screenshot_20260114_194919_Google.jpg") center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+/* Dark overlay for readability */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: -1;
+}
+
+
+/* Floating letters */
+.floating {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.letter {
+    position: absolute;
+    font-size: 22px;
+    font-weight: bold;
+    animation: float 12s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(110vh);
+
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header img {
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero {
+    color: red;
+
+    font-size: 26px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Sections */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 18px;
+    line-height: 1.7;
+
+}
+
+/* Contact */
+.contact {
+    background: rgba(0,0,0,0.85);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    color: silver;
+    margin-bottom: 30px;
+}
+
+.contact a {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: red;
+    color: white;
+
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    background: silver;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="floating" id="floating"></div>
+
+<header>
+    <img src="Screenshot_20260114_195249_Gallery.jpg" alt="ThrottleMedia Logo">
+    <div class="hero">
+        You focus on the riding and racing, I focus on editing and creating the story to tell for you.
+    </div>
+</header>
+
+<div class="section">
+    <h2>Throttle Media</h2>
+    <p><strong>Every rider has a story. I turn yours into content that gets seen, shared, and remembered.</strong></p>
+
+    <p>
+        I create videos and social media posts for motocross and enduro riders, as well as teams and businesses.
+        I produce Instagram, Facebook and TikTok posts, videos, ads, and catchphrases to help grow your brand.
+    </p>
+
+</div>
+
+<div class="contact">
+    <h2>Your story deserves to be seen. Let’s turn your journey into content that builds your name and your brand.
+Contact us for a quote </h2>
+    <a href="https://wa.me/27842014336" target="_blank">WhatsApp Me</a>
+    <a href="throttle.mediiaa@gmail.com">Email Me</a>
+</div>
+
+<script>
+const container = document.getElementById("floating");
+const letters = ["A","S","T","R","O","T","O","M","E","D","I","A"];
+
+for (let i = 0; i < 50; i++) {
+    const span = 
+
+document.createElement("span");
+    span.className = "letter";
+    span.innerText = letters[Math.floor(Math.random() * letters.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = 6 + Math.random() * 10 + "s";
+    span.style.color = Math.random() > 0.5 ? "red" : "silver";
+    span.style.fontSize = 14 + Math.random() * 28 + "px";
+    container.appendChild(span);
+}
+</script>
+
+</body>
+</html>
